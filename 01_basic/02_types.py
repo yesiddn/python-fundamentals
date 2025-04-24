@@ -46,3 +46,11 @@ print("") # cadena vacía
 print("""
   Multilinea
 """)  # Multilinea (cadenas multilínea)
+
+print("bool:")
+print(True)  # True
+print(False)  # False
+print(1 == 1)  # True (comparación)
+
+print("NoneType:")
+print(None)  # None (nulo)
