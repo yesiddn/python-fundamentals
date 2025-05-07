@@ -59,6 +59,10 @@ print(numbers) # [1, 2, 10, 4, 5, 6, 7, 8, 9, 11, 12]
 numbers += [13, 14] # Forma corta y eficiente
 print(numbers) # [1, 2, 10, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14]
 
+# Longitud de la lista
+print("\nLongitud de la lista")
+print(len(numbers)) # 14 (número de elementos en la lista)
+
 ###
 # EJERCICIOS
 ###
