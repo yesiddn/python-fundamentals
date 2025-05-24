@@ -29,6 +29,10 @@ def find_first_sum(nums: list[int], goal: int) -> list[int] | None:
   seen: dict[int, int] = {} # Diccionario para almacenar los números vistos y sus índices
 
   for i, num in enumerate(nums):
+    if num > goal or num in seen:
+      # Si el número es mayor que el objetivo o ya ha sido visto, lo ignoramos
+      continue
+    
     missing = goal - num  # Calcula el número que falta para alcanzar el objetivo
     if missing in seen:
       return [seen[missing], i]  # Si el número que falta ya está en el diccionario, devuelve sus índices
