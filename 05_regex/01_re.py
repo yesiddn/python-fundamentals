@@ -41,3 +41,19 @@ print("Posición de inicio:", match.start())  # Imprime la posición de inicio d
 
 # .end() devuelve la posición de fin del texto encontrado
 print("Posición de fin:", match.end())  # Imprime la posición de fin del texto encontrado
+
+# EJERCICIO 01
+# Encuentra la primera ocurrencia de la palabra "IA" en el siguiente texto
+# e indica en que posición empieza y termina la coincidencia.
+text = "Todo el mundo dice que la IA nos va a quitar el trabajo. Pero solo hace falta ver cómo la puede cagar con las Regex para ir con cuidado"
+pattern = "IA"
+
+match = re.search(pattern, text)
+
+if match:
+  print("He encontrado el patrón en el texto.")
+  print("Texto encontrado:", match.group())
+  print("Posición de inicio:", match.start())
+  print("Posición de fin:", match.end())
+else:
+  print("No he encontrado el patrón en el texto.")
