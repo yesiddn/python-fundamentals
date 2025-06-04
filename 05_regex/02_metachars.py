@@ -55,3 +55,14 @@ print("\nEjercicio: Número de España")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)
+
+# 3. Alfa numéricos (\w)
+# Coincide con cualquier caracter alfanumérico (letras [a-z, A-Z], números [0-9] y guiones bajos)
+text = "# Hola, mundo! H0la, Python! H)la, Regex!"
+pattern = r"\w"  # Coincide con cualquier caracter alfanumérico
+
+found = re.findall(pattern, text)
+print("\n3. Alfanuméricos (\\w)")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found) # se ignoran los caracteres especiales como #, !, ), etc.
