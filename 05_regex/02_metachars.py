@@ -24,3 +24,34 @@ found = re.findall(pattern, text)
 print("\nTexto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)
+
+# 2. Digitos (\d)
+# Coincide con cualquier digito (0-9)
+text = "Mi número es 12345 y mi código postal es 28080."
+pattern = r"\d"
+found = re.findall(pattern, text) # esto devuelve una lista con todos los dígitos encontrados
+# Si queremos encontrar un número completo, podemos agrupar \d, es decir, si queremos tres numeros consecutivos, usamos \d\d\d
+
+print("\n2. Dígitos (\\d)")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)
+
+# Cuantificadores
+# Una forma de agrupar los dígitos es usando los cuantificadores
+# {n} - Coincide con exactamente n ocurrencias del patrón
+pattern = r"\d{5}"  # Coincide con exactamente 5 dígitos
+found = re.findall(pattern, text)
+print("\nCuantificadores:")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)
+
+# Ejercicio: Detectar si hay un número de España en el texto gracias al prefijo +34
+text = "Mi número de teléfono es +34 612 345 678. Apuntalo, vale?"
+pattern = r"\+34 \d{3} \d{3} \d{3}"  # Coincide con el formato +34 xxx xxx xxx
+found = re.findall(pattern, text)
+print("\nEjercicio: Número de España")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)
