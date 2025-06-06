@@ -66,3 +66,14 @@ print("\n3. Alfanuméricos (\\w)")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found) # se ignoran los caracteres especiales como #, !, ), etc.
+
+# 4. Espacios (\s)
+# Coincide con cualquier espacio en blanco (espacio, tabulación [\t], salto de línea [\n], etc.)
+text = "Hola,\tmundo!\nHola, Python!\nHola, Regex!"
+pattern = r"\s"  # Coincide con cualquier espacio en blanco
+
+found = re.findall(pattern, text)
+print("\n4. Espacios (\\s)")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)
