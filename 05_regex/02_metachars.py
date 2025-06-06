@@ -118,3 +118,13 @@ else: print("Resultado: La cadena no termina con 'mundo!'.")
 # EJERCICIO:
 # Tenemos una lista de archivos, necesitamos saber los nombres de los ficheros con extension .txt
 files = "file1.txt file2.pdf midu-of.webp secret.txt"
+
+# 7. Principio o final de una palabra (\b)
+# Coincide con el principio o final de una palabra
+text = "casa casada cosa cosas casado casa"
+pattern = r"\bc.sa\b"  # Coincide con la palabra "casa" completa
+found = re.findall(pattern, text)
+print("\n7. Principio o final de una palabra (\\b)")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)
