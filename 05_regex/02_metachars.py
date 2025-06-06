@@ -77,3 +77,28 @@ print("\n4. Espacios (\\s)")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)
+
+# 5. Inicio (^) 
+# Coincide con el inicio de una cadena
+username = "_usuario123"
+pattern = r"^\w"  # Validar nombre de usuario
+
+valid = re.search(pattern, username)  
+print("\n5. Inicio (\\^)")
+print("Texto:", username)
+print("Patrón:", pattern)
+
+if valid: print("Resultado: El nombre de usuario es válido.")
+else: print("Resultado: El nombre de usuario no es válido.")
+
+# Validar numero de teléfono
+phone_number = "+34 612 345 678"
+pattern = r"^\+\d{2,3} "
+
+valid = re.search(pattern, phone_number)
+print("\nValidación de número de teléfono")
+print("Texto:", phone_number)
+print("Patrón:", pattern)
+
+if valid: print("Resultado: El número de teléfono es válido.")
+else: print("Resultado: El número de teléfono no es válido.")
