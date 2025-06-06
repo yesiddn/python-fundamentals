@@ -24,3 +24,14 @@ print("\nEjercicio: Palabras con cero o más 'a' y una 'b'")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)  # ['aaab', 'aab', 'ab', 'b']  # Coincide con todas las palabras que cumplen el patrón
+
+# +
+# Coincide con una o más ocurrencias del patrón anterior
+text = "aaaba ddd dda ccc bbba dadaddd"
+pattern = r"a+"  # Coincide con una o más 'a'
+
+found = re.findall(pattern, text)
+print("\n2. Una o más ocurrencias (+)")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)  # ['aaa', 'a', 'a']  # Coincide con todas las 'a' que aparecen al menos una vez
