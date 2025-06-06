@@ -102,3 +102,19 @@ print("Patrón:", pattern)
 
 if valid: print("Resultado: El número de teléfono es válido.")
 else: print("Resultado: El número de teléfono no es válido.")
+
+# 6. Fin ($)
+# Coincide con el final de una cadena
+text = "Hola, mundo!"
+pattern = r"mundo!$"  # Validar que la cadena termina con "mundo!"
+valid = re.search(pattern, text)
+
+print("\n6. Fin ($)")
+print("Texto:", text)
+print("Patrón:", pattern)
+if valid: print("Resultado: La cadena termina con 'mundo!'.")
+else: print("Resultado: La cadena no termina con 'mundo!'.")
+
+# EJERCICIO:
+# Tenemos una lista de archivos, necesitamos saber los nombres de los ficheros con extension .txt
+files = "file1.txt file2.pdf midu-of.webp secret.txt"
