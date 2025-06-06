@@ -128,3 +128,14 @@ print("\n7. Principio o final de una palabra (\\b)")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)
+
+# 8. Coincidir con una u otra cosa (|)
+# Coincide con una opción u otra
+fruits = "manzana, naranja, plátano, kiwi, mandarina"
+pattern = r"mandarina|naranja"
+
+matches = re.findall(pattern, fruits)
+print("\n8. Coincidir con una u otra cosa (|)")
+print("Texto:", fruits)
+print("Patrón:", pattern)
+print("Resultados encontrados:", matches)
