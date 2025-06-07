@@ -57,3 +57,34 @@ print("\nEjercicio: Números de teléfono con +34 opcional")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)  # ['+34 987654321', '34 123456789']  # Coincide con los números de teléfono que cumplen el patrón
+
+# {n}
+# Coincide con exactamente n ocurrencias del patrón anterior
+text = "aaaba aaaa"
+pattern = r"a{2}"  # Coincide con exactamente dos 'a'
+
+found = re.findall(pattern, text)
+print("\n4. Exactamente n ocurrencias ({n})")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)  # ['aa', 'aa', 'aa']  # Coincide con todas las 'a' que aparecen exactamente dos veces
+
+# {n,m}
+# Coincide con al menos n y como máximo m ocurrencias del patrón anterior
+text = "aaaba aaaa aaa"
+pattern = r"a{2,3}"  # Coincide con entre dos y tres 'a'
+found = re.findall(pattern, text)
+print("\n5. Entre n y m ocurrencias ({n,m})")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)  # ['aaa', 'aaa', 'aaa']  # Coincide con todas las 'a' que aparecen entre dos y tres veces
+
+# Ejercicio:
+# Encontrar palabras que tengan entre 2 y 4 letras
+text = "ala casa árbol perro gato sol luna murcielago"
+pattern = r"\b\w{2,4}\b"  # Coincide con palabras de entre 2 y 4 letras
+found = re.findall(pattern, text)
+print("\nEjercicio: Palabras con entre 2 y 4 letras")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)  # ['ala', 'casa', 'sol', 'luna']
