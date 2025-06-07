@@ -35,3 +35,25 @@ print("\n2. Una o más ocurrencias (+)")
 print("Texto:", text)
 print("Patrón:", pattern)
 print("Resultados encontrados:", found)  # ['aaa', 'a', 'a']  # Coincide con todas las 'a' que aparecen al menos una vez
+
+# ?
+# Coincide con cero o una ocurrencia del patrón anterior
+text = "aaabaacb"
+pattern = r"a?b" # Coincide con cero o una 'a'
+
+found = re.findall(pattern, text)
+print("\n3. Cero o una ocurrencia (?)")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found) # ['ab', 'b']
+
+# Ejercicio:
+# Hacer opcional que aparezca el +34 antes del número de teléfono
+text = "+34 987654321 34 123456789 987654321 123456789"
+pattern = r"\+?34 \d{9}" # Coincide con un número de teléfono que puede empezar con +34 o solo 34
+
+found = re.findall(pattern, text)
+print("\nEjercicio: Números de teléfono con +34 opcional")
+print("Texto:", text)
+print("Patrón:", pattern)
+print("Resultados encontrados:", found)  # ['+34 987654321', '34 123456789']  # Coincide con los números de teléfono que cumplen el patrón
