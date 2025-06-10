@@ -100,3 +100,46 @@ print(json.dumps(api_response, indent=2))  # Imprimir la respuesta formateada
 
 print("Respuesta de OpenAI:")
 print(api_response["choices"][0]["message"]["content"])
+
+# API de deepseek
+
+DEEPSEEK_KEY = "sk-..." # Reemplaza con tu propia clave de API de DeepSeek
+
+def call_deepseek(api_key: str, prompt: str):
+  """
+  Llama a la API de DeepSeek con el prompt proporcionado.
+  """
+
+  url = "https://api.deepseek.com/v1/chat/completions"
+  headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {api_key}"
+  }
+  data = {
+    "model": "deepseek-chat",
+    "messages": [
+      {
+        "role": "user",
+        "content": prompt
+      }
+    ]
+  }
+
+  try:
+    response = requests.post(url, headers=headers, json=data)
+    # response.raise_for_status()  # Lanza un error si la respuesta no es exitosa
+    return response.json()
+  except requests.exceptions.RequestException as e:
+    print("Error en la petición a DeepSeek:", e)
+  except KeyError:
+    print("Error al procesar la respuesta de DeepSeek.")
+  except Exception as e:
+    print("Ocurrió un error inesperado:", e)
+
+api_response = call_deepseek(DEEPSEEK_KEY, "Escribe un poema sobre Python y la programación.")
+
+# formatear json con dumps
+print(json.dumps(api_response, indent=2))  # Imprimir la respuesta formateada
+
+print("Respuesta de DeepSeek:")
+print(api_response["choices"][0]["message"]["content"])
