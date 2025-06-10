@@ -1,6 +1,7 @@
 # Trabajando con fechas y horas en Python
 
 from datetime import datetime, timedelta
+import locale # Para establecer la localización (traduce meses, días al idioma local)
 
 # Obtener la fecha y hora actual
 fecha_actual = datetime.now()
@@ -40,3 +41,9 @@ date_one = datetime.now()
 date_two = datetime(2004, 12, 23)
 diferencia = date_one - date_two
 print("Diferencia entre fechas:", diferencia)
+
+# Establecer la localización para formatear fechas en español
+locale.setlocale(locale.LC_TIME, 'es_CO.UTF-8')  # LC_TIME -> local processing time
+# Formatear fecha en español
+fecha_formateada_es = fecha_actual.strftime("%A, %d de %B de %Y")
+print("Fecha actual formateada en español:", fecha_formateada_es)
